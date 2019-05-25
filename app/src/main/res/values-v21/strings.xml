@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_rewards">Rewards</string>
+    <string name="action_wallet">Wallet</string>
+    <string name="promo_text">Your free trial expired on 29 Jan 2019.
+        Please upgrade now to get full access.</string>
+</resources>
