@@ -1,3 +1,3 @@
 ## Screenshot
 
-<img src="https://photos.app.goo.gl/WTxDzTdRe4BENVj26" height="400"/>
+<img src="https://github.com/DaMan02/SelfStudyUI/blob/master/ss/Screenshot_20190525-212012.png?raw=true" height="400"/>
