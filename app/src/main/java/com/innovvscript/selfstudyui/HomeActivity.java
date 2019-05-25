@@ -13,8 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +42,10 @@ public class HomeActivity extends AppCompatActivity
         getSupportActionBar().setTitle("SelfStudy");
 
         initNav(toolbar);
+        TextView textView = findViewById(R.id.promo_desc);
+        String text = "Your free trial expired on <font color='#048D99'><strong>29 Jan 2019</strong></font>\n" +
+                "        Please upgrade now to get full access.";
+        textView.setText(Html.fromHtml(text));
         subjectsList = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_view_id);
         setUpRecyclerView();
@@ -44,6 +54,7 @@ public class HomeActivity extends AppCompatActivity
         addItemToList("Physics",R.drawable.ic_physics,"0");
         addItemToList("Chemistry",R.drawable.ic_chemistry,"0.71");
         addItemToList("Mathematics",R.drawable.ic_maths,"0");
+
 
     }
 
@@ -78,16 +89,6 @@ public class HomeActivity extends AppCompatActivity
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
-//        bottomNavigation ColorStateList
-        colorStateList = new ColorStateList(
-                new int[][]{
-                        new int[]{android.R.attr.state_checked},
-                },
-                new int[] {
-                       R.color.blueText,
-                }
-        );
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -95,11 +96,6 @@ public class HomeActivity extends AppCompatActivity
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-//            bottomNavigationView.setBackgroundColor(Color.WHITE);
-//            navigation.setItemBackgroundResource(android.R.color.white);
-//            navigation.setItemTextColor(colorStateList);
-//            navigation.setItemIconTintList(colorStateList);
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
